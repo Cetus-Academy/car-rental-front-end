@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Footer.css';
+import './Footer.scss';
 
 const Footer = () => {
   const [thisDate, setThisDate] = useState(null);
