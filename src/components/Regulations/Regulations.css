@@ -1,0 +1,13 @@
+main.regulations {
+  padding: 120px 50px 60px 50px;
+  font-size: 20px;
+}
+main.regulations h2 {
+  color: #b6092b;
+  font-weight: bold;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+main.regulations .regulations-paragraphs p {
+  padding: 10px 0;
+}/*# sourceMappingURL=Regulations.css.map */
