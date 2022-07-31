@@ -3,6 +3,8 @@ import "./Calculator.css"
 import Summary from "./subcomponents/Summary"
 import Loader from "../Loader/Loader"
 import RangeDatepicker from "./subcomponents/RangeDatepicker"
+import { Tooltip } from "react-tippy"
+import "react-tippy/dist/tippy.css"
 import { useParams } from "react-router-dom"
 import {
   getCarBySlug,
@@ -11,6 +13,7 @@ import {
 } from "../../services/request"
 import calculateCarRentPrice from "./functions/calculateCarRentPrice"
 import renderSelectOptions from "./functions/renderSelectOptions"
+import { BsFillInfoSquareFill } from "react-icons/bs"
 
 const priceForOneNight = 135
 
@@ -137,7 +140,15 @@ const Calculator = () => {
                 />
                 <br />
                 <label htmlFor="year-of-get-driving-license">
-                  Rok otrzymania prawa jazdy
+                  Rok otrzymania prawa jazdy{" "}
+                  <Tooltip
+                    // options
+                    title="Jeśli posiadasz prawo jazdy ponad 5 lat otrzymujesz zniżkę 20%!"
+                    position="bottom"
+                    trigger="mouseenter"
+                  >
+                    <BsFillInfoSquareFill />
+                  </Tooltip>
                 </label>
                 <br />
                 <select

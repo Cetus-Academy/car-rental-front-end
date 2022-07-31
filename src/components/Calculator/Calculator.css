@@ -8,9 +8,17 @@ main.calculator {
   max-width: 100%;
 }
 
-input {
+input,
+select {
+  font-size: 16px;
+  padding-left: 15px;
   width: 100%;
   height: 30px;
+  font-weight: bold;
+  min-height: 53px;
+  border-radius: 10px;
+  border: 1px solid #e7edf3;
+  box-shadow: 1px 1px 0 0 rgb(196 196 196 / 24%);
 }
 
 .div-form {
@@ -36,15 +44,19 @@ input {
   margin-bottom: 20px;
 }
 
-.year-of-get-driving-license {
+.calculator-form select {
   height: 30px;
   width: 100%;
   font-size: 17px;
+  border: 1px solid #e7edf3;
+  box-shadow: 1px 1px 0 0 rgb(196 196 196 / 24%);
 }
 .range-display-value {
   max-width: 20%;
+  text-align: center;
 }
 .range-display {
+  padding-left: 0;
   width: 75%;
   height: 13px;
   -webkit-appearance: none;
@@ -54,16 +66,17 @@ input {
   overflow: hidden;
   box-shadow: inset 0 0 2px rgba(0, 0, 0, 1);
   margin-left: 5%;
+  min-height: 13px;
 }
 .range-display::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: rgb(17, 17, 17);
+  background: rgb(118, 0, 0);
   cursor: pointer;
-  border: 4px solid #333;
-  box-shadow: -407px 0 0 400px rgb(90, 90, 90);
+  border: 4px solid rgb(223, 51, 51);
+  box-shadow: -407px 0 0 400px rgb(182, 9, 43);
 }
 
 .calculator-car-img img {
