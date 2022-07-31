@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react"
 import "./Calculator.css"
 import Summary from "./subcomponents/Summary"
 import Loader from "../Loader/Loader"
-import Datepicker from "./subcomponents/Datepicker"
-
+import RangeDatepicker from "./subcomponents/RangeDatepicker"
 import { useParams } from "react-router-dom"
 import {
   getCarBySlug,
@@ -109,7 +108,8 @@ const Calculator = () => {
               <form onSubmit={handleCalculateCarRentPrice}>
                 <span>Termin wypożyczenia samochodu</span>
                 <br />
-                <label htmlFor="rent-since">Od:</label>
+                <RangeDatepicker />
+                {/* <label htmlFor="rent-since">Od:</label>
                 <input
                   type="date"
                   name="rent-since"
@@ -123,7 +123,7 @@ const Calculator = () => {
                   name="rent-to"
                   id="rent-to"
                   onChange={handleRentToChange}
-                />
+                /> */}
                 <br />
                 <label htmlFor="adress">Lokalizacja odbioru samochodu</label>
                 <br />
