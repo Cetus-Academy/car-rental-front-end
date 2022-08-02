@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FormProvider, useForm, useWatch } from 'react-hook-form';
 import './OrderForm.scss';
@@ -6,44 +7,8 @@ import InputText from './subcomponents/InputText';
 import InputCheckbox from './subcomponents/InputCheckbox';
 import InputRadio from './subcomponents/InputRadio';
 import TextareaField from './subcomponents/TextareaField';
-
-const deliveryMethods = [
-  {
-    name: 'inpost',
-    text: 'Kurier InPost',
-    price: '15,00',
-  },
-  {
-    name: 'pickup-courier',
-    text: 'Kurier pobranie',
-    price: '15,00',
-  },
-  {
-    name: 'parcel-locker',
-    text: 'Paczkomat',
-    price: '12,00',
-  },
-];
-
-const paymentMethods = [
-  {
-    name: 'traditional-bank-transfer',
-    text: 'Tradycyjny przelew bankowy',
-    smallTagText:
-      'Prosimy o wpłatę bezpośrednio na nasze konto bankowe. Proszę użyć numeru zamówienia jako tytułu płatności',
-  },
-  {
-    name: 'transfers24',
-    text: 'Przelewy24',
-    smallTagText:
-      'Zapłać poprzez wygodny system płatności online: blik, szybki przelew bankowy, karta płatnicza, PayPo, Raty Przelewy24.',
-  },
-  {
-    name: 'blik',
-    text: 'BLIK',
-    smallTagText: 'Zapłać poprzez wygodny system płatności online: blik',
-  },
-];
+import { getPaymentMethods } from '../../../../services/orderFormRequests';
+import { getDeliveryMethods } from '../../../../services/orderFormRequests';
 
 const patterns = {
   nip: /^[0-9]{10}$/,
@@ -56,6 +21,8 @@ const patterns = {
 };
 
 const OrderForm = () => {
+  const [paymentMethods, setPaymentMethods] = useState(null);
+  const [deliveryMethods, setDeliveryMethods] = useState(null);
   const methods = useForm({
     defaultValues: {
       'person-option': 'private-person',
@@ -81,7 +48,25 @@ const OrderForm = () => {
     name: 'delivery-method',
   });
 
+  useEffect(() => {
+    getPaymentMethods()
+      .then(response => {
+        setPaymentMethods(response);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    getDeliveryMethods()
+      .then(response => {
+        setDeliveryMethods(response);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
+
   const onSubmit = data => console.log(data);
+
   return (
     <>
       <main className='order'>
@@ -237,37 +222,41 @@ const OrderForm = () => {
               <div className='order-delivery-and-payment'>
                 <div className='order-delivery order-summary'>
                   <h2>2. Metoda dostawy</h2>
-                  {deliveryMethods.map(method => (
-                    <div className='delivery-input' key={method.name}>
-                      <div className='radio'>
-                        <InputRadio
-                          id={method.name}
-                          value={method.name}
-                          registerName='delivery-method'
-                        />
-                      </div>
-                      <div className='label'>
-                        <LabelText id={method.name} text={method.text} />
-                        <span>{method.price}</span>
-                      </div>
-                    </div>
-                  ))}
+                  {deliveryMethods &&
+                    deliveryMethods.map(({ id, name, price }) => {
+                      return (
+                        <div className='delivery-input' key={id}>
+                          <div className='radio'>
+                            <InputRadio
+                              id={id}
+                              value={id}
+                              registerName='delivery-method'
+                            />
+                          </div>
+                          <div className='label'>
+                            <LabelText id={id} text={name} />
+                            <span>{price}zł</span>
+                          </div>
+                        </div>
+                      );
+                    })}
                 </div>
                 <div className='order-payment order-summary'>
                   <h2>3. Metoda płatności</h2>
-                  {paymentMethods.map(method => (
-                    <div className='payment-input' key={method.name}>
-                      <InputRadio
-                        id={method.name}
-                        value={method.name}
-                        registerName='payment-method'
-                      />
-                      <LabelText id={method.name} text={method.text} />
-                      {paymentMethod === `${method.name}` && (
-                        <small>{method.smallTagText}</small>
-                      )}
-                    </div>
-                  ))}
+                  {paymentMethods &&
+                    paymentMethods.map(({ id, name, description }) => {
+                      return (
+                        <div className='payment-input' key={id}>
+                          <InputRadio
+                            id={id}
+                            value={id}
+                            registerName='payment-method'
+                          />
+                          <LabelText id={id} text={name} />
+                          {paymentMethod === id && <small>{description}</small>}
+                        </div>
+                      );
+                    })}
                 </div>
               </div>
               <div className='order-info'>
@@ -279,7 +268,7 @@ const OrderForm = () => {
                     <InputCheckbox id='regulations' required={true} />
                     <label htmlFor='regulations'>
                       Akceptuję <Link to='/regulamin'>regulamin</Link> serwisu
-                      <span>*</span>
+                      <span className='required'>*</span>
                     </label>
                   </div>
                   <div className='rodo'>
@@ -290,7 +279,7 @@ const OrderForm = () => {
                       <Link to='/polityka-prywatnosci'>
                         politykę prywatności
                       </Link>
-                      <span>*</span>
+                      <span className='required'>*</span>
                     </label>
                   </div>
                   <button type='submit' className='button'>
