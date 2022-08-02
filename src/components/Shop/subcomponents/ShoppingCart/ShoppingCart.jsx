@@ -4,9 +4,10 @@ import './ShoppingCart.scss';
 const ShoppingCart = () => {
   return (
     <main className='shopping-cart'>
-      <div className='cart-products'>
+      <section className='cart-products'>
         <div className='labels'>
           <span>Produkt</span>
+          <span></span>
           <span>Cena</span>
           <span>Ilość</span>
           <span>Razem</span>
@@ -15,7 +16,7 @@ const ShoppingCart = () => {
           <div className='cart-single-item'>
             <div className='cart-item-img'>
               <img
-                src='https://a.allegroimg.com/original/11ce9c/6d70593b4015b139321a2344b6cf/Zestaw-naklejek-na-samochod-LAMINOWANE-UV'
+                src='https://image.ceneostatic.pl/data/products/104650493/i-giftwow-pies-z-kiwajaca-glowa.jpg'
                 alt=''
               />
             </div>
@@ -35,7 +36,7 @@ const ShoppingCart = () => {
           <div className='cart-single-item'>
             <div className='cart-item-img'>
               <img
-                src='https://a.allegroimg.com/original/11ce9c/6d70593b4015b139321a2344b6cf/Zestaw-naklejek-na-samochod-LAMINOWANE-UV'
+                src='https://image.ceneostatic.pl/data/products/104650493/i-giftwow-pies-z-kiwajaca-glowa.jpg'
                 alt=''
               />
             </div>
@@ -53,7 +54,13 @@ const ShoppingCart = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
+      <section className='cart-summary'>
+        <h3>Koszyk razem</h3>
+        <p>Suma: 123 zł</p>
+
+        <button className='button'>Przejdź do kasy</button>
+      </section>
     </main>
   );
 };
