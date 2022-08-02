@@ -38,3 +38,42 @@ footer p {
     text-align: center;
   }
 }
+
+.footer-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+
+
+  .footer-header-left-panel{
+    display: flex;
+    gap: 100px;
+    
+    .footer-navigation{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      p{
+        cursor: pointer;
+      }
+    }
+  }
+
+  .footer-header-right-panel{
+    display: flex;
+    gap: 100px;
+  }
+  
+  .footer-social-media{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    img{
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+    }
+  }
+}
