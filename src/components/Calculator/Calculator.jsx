@@ -109,10 +109,24 @@ const Calculator = () => {
           <section className="calculator-form">
             <div className="div-form">
               <form onSubmit={handleCalculateCarRentPrice}>
-                <span>Termin wypożyczenia samochodu</span>
+                <label>Termin wypożyczenia samochodu</label>
                 <br />
-                <RangeDatepicker />
-                {/* <label htmlFor="rent-since">Od:</label>
+                {/* 
+                
+                
+                
+                
+                
+                */}
+                {/* <RangeDatepicker /> */}
+                {/* 
+                
+                
+                
+                
+                
+                */}
+                <label htmlFor="rent-since">Od:</label>
                 <input
                   type="date"
                   name="rent-since"
@@ -126,7 +140,7 @@ const Calculator = () => {
                   name="rent-to"
                   id="rent-to"
                   onChange={handleRentToChange}
-                /> */}
+                />
                 <br />
                 <label htmlFor="adress">Lokalizacja odbioru samochodu</label>
                 <br />
