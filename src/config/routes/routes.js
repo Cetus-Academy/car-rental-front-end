@@ -6,6 +6,7 @@ export const routes = {
   calculator: '/kalkulator',
   carCalculator: (id = ':carSlug') => `/kalkulator/${id}`,
   shop: `${prefixShop}`,
+  shoppingCart: `${prefixShop}/koszyk`,
   regulations: '/regulamin',
   privacy_policy: '/polityka-prywatnosci',
 };

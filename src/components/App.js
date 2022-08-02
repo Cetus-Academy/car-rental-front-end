@@ -15,6 +15,7 @@ import OrderForm from './Shop/subcomponents/OrderForm/OrderForm';
 import Regulations from './Regulations/Regulations';
 import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy';
 import ScrollToTop from '../js/scrollTop';
+import ShoppingCart from './Shop/subcomponents/ShoppingCart/ShoppingCart';
 
 const App = () => {
   return (
@@ -24,7 +25,7 @@ const App = () => {
       <Routes>
         <Route exact path='/' element={<HomePage></HomePage>} />
         <Route path={routes.cars} element={<CarsList></CarsList>} />
-        <Route path={routes.shop} element={<OrderForm></OrderForm>} />
+        <Route path={routes.shoppingCart} element={<ShoppingCart />} />
         <Route path={routes.car()} element={<Car></Car>} />
         <Route path={routes.calculator} element={<Calculator></Calculator>} />
         <Route
