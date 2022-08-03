@@ -80,11 +80,12 @@ select {
 }
 
 .calculator-car-img img {
-  padding-top: 40px;
-  width: 50%;
+  width: 75%;
   min-width: 500px;
   display: block;
   margin: 0 auto;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 5px rgb(196 196 196 / 24%);
 }
 
 .calculator-car-info {
@@ -138,6 +139,9 @@ select {
 .discount-info {
   color: rgb(0, 179, 104);
   font-weight: bold;
+  max-width: 500px;
+  padding-bottom: 20px;
+  padding-left: 20px;
 }
 
 @media only screen and (max-width: 991.5px) {

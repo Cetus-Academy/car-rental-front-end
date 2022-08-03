@@ -13,7 +13,7 @@ import {
 } from "../../services/request"
 import calculateCarRentPrice from "./functions/calculateCarRentPrice"
 import renderSelectOptions from "./functions/renderSelectOptions"
-import { BsFillInfoSquareFill } from "react-icons/bs"
+import { FcInfo } from "react-icons/fc"
 
 const priceForOneNight = 135
 
@@ -154,14 +154,14 @@ const Calculator = () => {
                 />
                 <br />
                 <label htmlFor="year-of-get-driving-license">
-                  Rok otrzymania prawa jazdy{" "}
+                  W którym roku otrzymałeś prawo jazdy{" "}
                   <Tooltip
                     // options
                     title="Jeśli posiadasz prawo jazdy ponad 5 lat otrzymujesz zniżkę 20%!"
                     position="bottom"
                     trigger="mouseenter"
                   >
-                    <BsFillInfoSquareFill />
+                    <FcInfo />
                   </Tooltip>
                 </label>
                 <br />
@@ -180,7 +180,7 @@ const Calculator = () => {
                 </select>
                 <br />
                 <label htmlFor="kilometers-to-drive">
-                  Szacunkowy dystans jaki chce pokonać klient:
+                  Szacunkowy dystans jaki chcesz pokonać:
                 </label>
                 <br />
                 <input
@@ -226,7 +226,7 @@ const Calculator = () => {
                 </ul>
               </div>
             </div>
-            {msg && <p className="discount-info">{msg}</p>}
+            {msg && <span className="discount-info">{msg}</span>}
           </section>
           {carSummary ? (
             <Summary
