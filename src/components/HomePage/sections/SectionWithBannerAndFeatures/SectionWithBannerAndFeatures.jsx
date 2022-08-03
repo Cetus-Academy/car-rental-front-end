@@ -32,9 +32,9 @@ const SectionWithBannerAndFeatures = () => {
           <img src={caricon} alt="ikona samochodu" className="iconp" />
           <p className="wpo"> Samochody</p>
           <ul>
-            <li>Nowe</li>
-            <li>Zadbane</li>
-            <li>Bezpieczne</li>
+            <li><i class="fa-solid fa-circle-check"></i>Nowe</li>
+            <li><i class="fa-solid fa-circle-check"></i>Zadbane</li>
+            <li><i class="fa-solid fa-circle-check"></i>Bezpieczne</li>
           </ul>
         </div>
 
