@@ -54,8 +54,10 @@ footer p {
       justify-content: center;
       flex-direction: column;
 
-      p{
+      a{
         cursor: pointer;
+        text-decoration: none;
+        color: #e9e9ce;
       }
     }
   }

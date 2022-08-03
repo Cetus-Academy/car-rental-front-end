@@ -3,6 +3,7 @@ import './Footer.scss';
 import facebookLogo from '../../img/facebook-logo.png';
 import instagramLogo from '../../img/instagram-logo.png';
 import linkedinLogo from '../../img/linkedin-logo.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const [thisDate, setThisDate] = useState(null);
@@ -20,9 +21,15 @@ const Footer = () => {
             <p>Dziękujemy że nas odwiedziłeś, mamy nadzieję że niedługo wrócisz.</p>
           </div>
           <div className='footer-navigation'>
-            <p>Polityka prywatności</p>
-            <p>Regulamin</p>
-            <p>Kontakt</p>
+            <Link to="/polityka-prywatnosci">
+              <p>Polityka prywatności</p>
+            </Link>
+            <Link to="/regulamin">
+              <p>Regulamin</p>
+            </Link>
+            <Link to="/kontakt">
+              <p>Kontakt</p>
+            </Link>
           </div>
         </div>
         <div className='footer-header-right-panel'>
