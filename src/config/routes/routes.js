@@ -8,4 +8,5 @@ export const routes = {
   shop: `${prefixShop}`,
   regulations: '/regulamin',
   privacy_policy: '/polityka-prywatnosci',
+  about_us:'/o-nas',
 };

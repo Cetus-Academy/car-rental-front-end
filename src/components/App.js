@@ -12,8 +12,11 @@ import CarsList from './CarsList/CarsList';
 import Calculator from './Calculator/Calculator';
 import Shop from './Shop/Shop';
 import OrderForm from './Shop/subcomponents/OrderForm/OrderForm';
+import SectionAboutUs from './SectionAboutUs/SectionAboutUs';
 import Regulations from './Regulations/Regulations';
 import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy';
+
+
 
 const App = () => {
   return (
@@ -24,6 +27,7 @@ const App = () => {
         <Route exact path='/' element={<HomePage></HomePage>} />
         <Route path={routes.cars} element={<CarsList></CarsList>} />
         <Route path={routes.shop} element={<OrderForm></OrderForm>} />
+        <Route path={routes.about_us} element={<SectionAboutUs></SectionAboutUs>}/>
         <Route path={routes.car()} element={<Car></Car>} />
         <Route path={routes.calculator} element={<Calculator></Calculator>} />
         <Route

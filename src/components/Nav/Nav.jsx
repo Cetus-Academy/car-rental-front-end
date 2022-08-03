@@ -2,6 +2,8 @@ import React from 'react';
 import './Nav.css';
 import { Link } from 'react-router-dom';
 import navSlide from '../../js/burger';
+import SectionAboutUs from '../SectionAboutUs/SectionAboutUs';
+
 
 const Nav = () => {
   const toggleNav = () => {
@@ -23,6 +25,9 @@ const Nav = () => {
         </li>
         <li>
           <Link to='/sklep'>Sklep</Link>
+        </li>
+        <li>
+        <Link to="/o-nas">O nas</Link>
         </li>
       </ul>
       <div className='burger' onClick={toggleNav}>
