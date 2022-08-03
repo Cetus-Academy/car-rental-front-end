@@ -67,7 +67,7 @@ const calculateCarRentPrice = (
       rentPrice *= 1.2
     } else {
       setMsg(
-        "Posiadasz prawojazdy więcej niż 5 lat, z tego powodu obniżyliśmy cenę twojego wynajmu o 20%!"
+        "Posiadasz prawojazdy więcej niż 5 lat, z tego powodu obniżyliśmy cenę wynajmu o 20%!"
       )
     }
 

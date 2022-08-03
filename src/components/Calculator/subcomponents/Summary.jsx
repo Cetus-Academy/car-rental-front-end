@@ -32,8 +32,8 @@ const Summary = (props) => {
             labels: [
               "Koszty paliwa",
               "Podatek VAT",
-              "Cena wypożyczenia samochodu",
-              "Koszt dostarczenia samochodu",
+              "Cena wypożyczenia",
+              "Koszt dostarczenia",
             ],
             datasets: [
               {
@@ -42,19 +42,20 @@ const Summary = (props) => {
                   priceOfFuelUsedWhileRented,
                   vatPrice,
                   rentPrice,
-                  deliveryFee,
+                  300,
+                  // deliveryFee,
                 ],
                 backgroundColor: [
-                  "rgba(255, 99, 132, 0.2)",
-                  "rgba(54, 162, 235, 0.2)",
-                  "rgba(255, 206, 86, 0.2)",
-                  "rgba(75, 192, 192, 0.2)",
+                  "rgba(177, 70, 167, 0.4)",
+                  "rgba(174, 37, 0, 0.4)",
+                  "rgba(182, 9, 43, 0.4)",
+                  "rgba(129, 109, 213, 0.4)",
                 ],
                 borderColor: [
-                  "rgba(255, 99, 132, 1)",
-                  "rgba(54, 162, 235, 1)",
-                  "rgba(255, 206, 86, 1)",
-                  "rgba(75, 192, 192, 1)",
+                  "rgba(177, 70, 167, 1)",
+                  "rgba(174, 37, 0, 1)",
+                  "rgba(182, 9, 43, 1)",
+                  "rgba(129, 109 ,213, 1)",
                 ],
                 borderWidth: 1,
               },
@@ -74,21 +75,21 @@ const Summary = (props) => {
       </div>
       <div className="calculator-summary-info">
         <div className="calculator-summary-info-item">
-          <b>Szacunkowy dystans:</b>{" "}
+          <span>Szacunkowy dystans:</span>{" "}
           <p className="calculator-summary-info-item-value">
             {kilometersToDrive} km
           </p>
         </div>
         <div className="calculator-summary-info-item-line"></div>
         <div className="calculator-summary-info-item">
-          <b>Bazowa cena za dzień: </b>
+          <span>Bazowa cena za dzień: </span>
           <p className="calculator-summary-info-item-value">
             {priceForOneNight} zł
           </p>
         </div>
         <div className="calculator-summary-info-item-line"></div>
         <div className="calculator-summary-info-item">
-          <b>Ilość dni:</b>
+          <span>Ilość dni:</span>
           <p className="calculator-summary-info-item-value">
             {numberOfRentDays}
           </p>
@@ -96,13 +97,13 @@ const Summary = (props) => {
         <div className="calculator-summary-info-item-line"></div>
         <div className="calculator-summary-info-item">
           <span className="price-brutto">
-            <b>Wyliczona cena:</b>
+            <span>Wyliczona cena:</span>
             <br></br>
             <span className="calculator-summary-info-item-value-brutto">
               {priceBrutto} zł
             </span>
           </span>
-          <span className="price-netto"> (netto: {priceNetto} zł)</span>
+          <p className="price-netto"> (netto: {priceNetto} zł)</p>
         </div>
       </div>
     </section>

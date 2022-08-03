@@ -118,7 +118,7 @@ const Calculator = () => {
                 
                 
                 */}
-                {/* <RangeDatepicker /> */}
+                <RangeDatepicker />
                 {/* 
                 
                 
@@ -126,7 +126,7 @@ const Calculator = () => {
                 
                 
                 */}
-                <label htmlFor="rent-since">Od:</label>
+                {/* <label htmlFor="rent-since">Od:</label>
                 <input
                   type="date"
                   name="rent-since"
@@ -140,7 +140,7 @@ const Calculator = () => {
                   name="rent-to"
                   id="rent-to"
                   onChange={handleRentToChange}
-                />
+                /> */}
                 <br />
                 <label htmlFor="adress">Lokalizacja odbioru samochodu</label>
                 <br />

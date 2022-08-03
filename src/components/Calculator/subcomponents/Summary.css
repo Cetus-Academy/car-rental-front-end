@@ -1,7 +1,7 @@
 .calculator-summary-info {
   font-size: 20px;
   padding: 5px 0;
-  border: 1px solid rgb(182, 9, 43);
+  border: 5px solid rgba(182, 9, 43, 0.7);
   border-radius: 20px;
   padding: 15px 15px;
 }
@@ -23,15 +23,22 @@
 }
 .calculator-summary-info-item-value {
   padding-bottom: 10px;
+  font-weight: bold;
 }
 .price-brutto {
   font-size: 120%;
 }
+.calculator-summary-info-item-value-brutto {
+  font-weight: bold;
+  color: rgb(182, 9, 43);
+}
 .price-netto {
   font-size: 90%;
+  font-weight: bold;
+  color: rgba(182, 9, 43, 0.6);
 }
 .calculator-summary-graph {
-  max-width: 70%;
+  max-width: 50%;
 }
 
 @media only screen and (max-width: 991.5px) {

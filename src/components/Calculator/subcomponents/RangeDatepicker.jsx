@@ -4,6 +4,9 @@ import { DateRange } from "react-date-range"
 import format from "date-fns/format"
 import { addDays } from "date-fns"
 
+//import of polish language
+import pl from "date-fns/locale/pl/index.js"
+
 import "../Calculator.css"
 import "./RangeDatepicker.css"
 import "react-date-range/dist/styles.css"
@@ -70,6 +73,7 @@ const DateRangeComp = () => {
             months={1}
             direction="horizontal"
             className="calendarElement"
+            locale={pl}
           />
         )}
       </div>
