@@ -251,6 +251,7 @@ main.home .contact button {
   margin-top: 20px;
 }
 
+
 @media only screen and (max-width: 1100px) {
   main.home section div {
     font-size: 16px;
@@ -278,11 +279,12 @@ main.home .contact button {
     grid-template-columns: auto;
   }
 
-  main.home .grid-cols-3 {
+  main.home .grid-cols-3{
     display: grid;
     grid-template-columns: auto;
   }
 }
+
 
 @media only screen and (max-width: 560px) {
   header h1 {
