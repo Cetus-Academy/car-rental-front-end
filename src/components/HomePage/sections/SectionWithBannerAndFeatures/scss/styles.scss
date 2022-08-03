@@ -1,0 +1,101 @@
+.differences {
+  border-radius: 5px;
+  background-color: #ede7e7;
+  width: 1fr;
+}
+
+.header {
+  text-align: center;
+
+  h3 {
+    color: #ff0000;
+    padding: 20px 0;
+  }
+}
+.iconc {
+  margin: 0px 20px;
+  height: 70px;
+  width: 7px;
+}
+
+.itemo,
+.itemt,
+.itemh,
+.itemf {
+  vertical-align: top;
+  padding: 40px 0;
+  text-align: center;
+
+  img {
+    width: 100%;
+    max-width: 120px;
+    padding: 0 0;
+  }
+  ul {
+    list-style-type: none;
+    i {
+      margin-right: 5px;
+    }
+  }
+}
+.word p {
+  font-weight: 700;
+  color: #ff0000;
+  padding-top: 10px;
+  font-size: 20px;
+}
+.wpo {
+  padding-top: 25px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.wpt {
+  padding-top: 10px;
+  font-size: 17px;
+}
+
+.car-page {
+  display: inline-block;
+  width: 100%;
+  
+  .hire-car {
+    width: 100%;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding: 0px 30px;
+    border-radius: 80px;
+  }
+}
+
+@media only screen and(min-width:1000px) {
+  .differences {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) repeat(2, 270px);
+    grid-template-rows: 40px 300px 300px repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100%;
+    .car-page {
+      grid-area: 1 / 1 / 4 / 3;
+    }
+    .header {
+      grid-area: 1 / 3 / 2 / 5;
+    }
+    .itemo {
+      grid-area: 2 / 3 / 3 / 4;
+    }
+    .itemt {
+      grid-area: 2 / 4 / 3 / 5;
+    }
+    .itemh {
+      grid-area: 3 / 3 / 4 / 4;
+    }
+    .itemf {
+      grid-area: 3 / 4 / 4 / 5;
+    }
+    .hire-car {
+      height: 100%;
+    }
+  }
+}
