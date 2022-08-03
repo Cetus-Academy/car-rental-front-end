@@ -51,6 +51,12 @@ const DateRangeComp = () => {
     }
   }
 
+  let today = new Date(
+    new Date().getFullYear(),
+    new Date().getMonth(),
+    new Date().getDate()
+  )
+  console.log(today)
   return (
     <div className="calendarWrap">
       <input
@@ -71,6 +77,7 @@ const DateRangeComp = () => {
             moveRangeOnFirstSelection={false}
             ranges={range}
             months={1}
+            minDate={today}
             direction="horizontal"
             className="calendarElement"
             locale={pl}
